@@ -10,10 +10,12 @@ namespace WirecastWrapper
 {
     public class WirecastShot
     {
-        public int ShotID { get; set; }
-        public string Name { get; set; }
+        public int ShotID { get; private set; }
+        public string Name { get; private set; }
 
         private static Dictionary<int, WirecastShot> shots = new Dictionary<int, WirecastShot>();
+
+        private WirecastShot() { }
 
         public static WirecastShot CreateFromObject(int shotID, object shot)
         {
